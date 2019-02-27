@@ -1,8 +1,11 @@
 package guru.springframework.entities;
 
+import lombok.Data;
+
 import javax.persistence.*;
 import java.math.BigDecimal;
 
+@Data
 @Entity
 public class Ingredient {
 
@@ -14,4 +17,7 @@ public class Ingredient {
 
     @ManyToOne
     private Recipe recipe;
+
+    @OneToMany(fetch = FetchType.EAGER)
+    private UnitMeasure unitMeasure;
 }
