@@ -3,6 +3,7 @@ package guru.springframework.entities;
 
 import lombok.Data;
 import javax.persistence.*;
+import java.util.Set;
 
 @Data
 @Entity
@@ -23,4 +24,7 @@ public class Recipe {
 
     @OneToOne(cascade = CascadeType.ALL)
     private Notes note;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "recipe")
+    private Set<Ingredient> ingredient;
 }
