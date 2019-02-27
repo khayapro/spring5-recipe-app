@@ -19,7 +19,7 @@ public class Ingredient {
     @ManyToOne
     private Recipe recipe;
 
-    @OneToMany(fetch = FetchType.EAGER)
+    @OneToOne(fetch = FetchType.EAGER)
     private UnitMeasure unitMeasure;
 
     @Enumerated(EnumType.STRING)
