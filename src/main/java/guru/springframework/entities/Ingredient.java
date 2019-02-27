@@ -1,5 +1,6 @@
 package guru.springframework.entities;
 
+import guru.springframework.enums.Difficulty;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -20,4 +21,7 @@ public class Ingredient {
 
     @OneToMany(fetch = FetchType.EAGER)
     private UnitMeasure unitMeasure;
+
+    @Enumerated(EnumType.STRING)
+    private Difficulty difficulty;
 }
